@@ -1,18 +1,53 @@
 // Assignment Code
 
 let generateBtn = document.querySelector("#generate");
-let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-let upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","P","Q","R","S","T","U","V","W","X","Y","Z"];
-let lowerCase = "abcdefghijklmnopqrstuvwxyz";
+let numbers = "0123456789";
+let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let lowercase = "abcdefghijklmnopqrstuvwxyz";
 let specialCharacters = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
 function generatePassword()
 {
   passwordLength = prompt("How many characters would you like in your password?");
-    if (passwordLength < 8) 
+    if (passwordLength < 8 || passwordLength > 128) 
     {
-      alert("Please enter more than 8 characters.");
-    } else uppercaseConfirm = confirm("Would you like upper case letters?");
+      alert("Please enter between 8 and 128 characters.");
+    } else {
+      let allowed = "";
+      uppercaseConfirm = confirm("Would you like upper case letters?");
+      lowercaseConfirm = confirm("Would you like lower case letters?");
+      numConfirm = confirm("Would you like numbers?");
+      specialConfirm = confirm("Would you like special characters?");
+
+      if(uppercaseConfirm = true)
+      {
+        allowed += uppercase;
+
+      }
+
+      if(lowercaseConfirm = true)
+      {
+        allowed += lowercase;
+        
+      }
+
+      if(specialConfirm = true)
+      {
+        allowed += specialCharacters;
+        
+      }
+
+      if(numConfirm = true)
+      {
+        allowed += numbers;
+        
+      }
+
+
+
+    }
+
+
 
 }
 // Write password to the #password input
