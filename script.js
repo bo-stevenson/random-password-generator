@@ -5,9 +5,17 @@ let numbers = "0123456789";
 let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowercase = "abcdefghijklmnopqrstuvwxyz";
 let specialCharacters = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+let uppercaseConfirm = false;
+let lowercaseConfirm = false;
+let specialConfirm = false;
+let numConfirm = false;
+let finalProduct = "";
+
+
 
 function generatePassword()
 {
+  
   passwordLength = prompt("How many characters would you like in your password?");
     if (passwordLength < 8 || passwordLength > 128) 
     {
@@ -19,35 +27,41 @@ function generatePassword()
       numConfirm = confirm("Would you like numbers?");
       specialConfirm = confirm("Would you like special characters?");
 
-      if(uppercaseConfirm = true)
+      if(uppercaseConfirm === true)
       {
         allowed += uppercase;
 
       }
 
-      if(lowercaseConfirm = true)
+      if(lowercaseConfirm === true)
       {
         allowed += lowercase;
         
       }
 
-      if(specialConfirm = true)
+      if(specialConfirm === true)
       {
         allowed += specialCharacters;
         
       }
 
-      if(numConfirm = true)
+      if(numConfirm === true)
       {
         allowed += numbers;
         
       }
-
-
-
+        
+      for(i=0; i < passwordLength; i++)
+      {
+        var random = Math.floor(Math.random() * allowed.length);
+        
+        finalProduct += allowed[random];
+      }
+        
+        
     }
 
-
+return finalProduct;
 
 }
 // Write password to the #password input
