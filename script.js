@@ -9,19 +9,20 @@ let uppercaseConfirm = false;
 let lowercaseConfirm = false;
 let specialConfirm = false;
 let numConfirm = false;
-let finalProduct = "";
+
 
 
 
 function generatePassword()
 {
-  
+let finalProduct = "";
+let allowed = "";
   passwordLength = prompt("How many characters would you like in your password?");
     if (passwordLength < 8 || passwordLength > 128) 
     {
       alert("Please enter between 8 and 128 characters.");
     } else {
-      let allowed = "";
+      
       uppercaseConfirm = confirm("Would you like upper case letters?");
       lowercaseConfirm = confirm("Would you like lower case letters?");
       numConfirm = confirm("Would you like numbers?");
